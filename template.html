@@ -1,45 +1,4 @@
-const Index = require("./index");
-
-const colors = 
-  {
-    green: {
-      wrapperBackground: "#E6E1C3",
-      headerBackground: "#C1C72C",
-      headerColor: "black",
-      photoBorderColor: "#black"
-    }
-  
-  , 
-    blue: {
-      wrapperBackground: "#5F64D3",
-      headerBackground: "#26175A",
-      headerColor: "white",
-      photoBorderColor: "#73448C"
-    }
-  
-  , 
-    pink: {
-      wrapperBackground: "#879CDF",
-      headerBackground: "#FF8374",
-      headerColor: "white",
-      photoBorderColor: "#FEE24C"
-    }
-  
-
-
-  , 
-    red: {
-      wrapperBackground: "#DE9967",
-      headerBackground: "#870603",
-      headerColor: "white",
-      photoBorderColor: "white"
-    }
-
-  }
-;
-
-function generateHTML(data) {
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -198,7 +157,7 @@ function generateHTML(data) {
                               <div class="card">
                                 <div class = "card-body"></div>
                                 <h5 class ="card-title">Public Repositories</h5>
-                                <p class="card-text">${data.repos}</p>
+                                <p class="card-text">13</p>
                               </div>
                                
                              </div>
@@ -207,7 +166,7 @@ function generateHTML(data) {
                              <div class="card">
                              <div class = "card-body"></div>
                              <h5 class ="card-title">Followers</h5>
-                             <p class="card-text">${data.followers}</p>
+                             <p class="card-text">0</p>
                            </div>
                            </div>
                              <div class = "col-sm-2"></div>
@@ -222,7 +181,7 @@ function generateHTML(data) {
                               <div class="card">
                                 <div class = "card-body"></div>
                                 <h5 class ="card-title">GitHub Stars</h5>
-                                <p class="card-text">${data.stars}</p>
+                                <p class="card-text">https://api.github.com/users/TwistedPixels/starred{/owner}{/repo}</p>
                               </div>
                                
                              </div>
@@ -231,7 +190,7 @@ function generateHTML(data) {
                              <div class="card">
                              <div class = "card-body"></div>
                              <h5 class ="card-title">Following</h5>
-                             <p class="card-text">${data.following}</p>
+                             <p class="card-text">0</p>
                            </div>
                            </div>
                              <div class = "col-sm-2"></div>
@@ -244,9 +203,4 @@ function generateHTML(data) {
           </div>
         </div>
       </div>
-      </body>`
-      
-        }
-
-
-        module.exports = generateHTML
+      </body>

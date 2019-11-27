@@ -1,45 +1,4 @@
-const Index = require("./index");
-
-const colors = 
-  {
-    green: {
-      wrapperBackground: "#E6E1C3",
-      headerBackground: "#C1C72C",
-      headerColor: "black",
-      photoBorderColor: "black"
-    }
-  
-  , 
-    blue: {
-      wrapperBackground: "#5F64D3",
-      headerBackground: "#26175A",
-      headerColor: "white",
-      photoBorderColor: "#73448C"
-    }
-  
-  , 
-    pink: {
-      wrapperBackground: "#879CDF",
-      headerBackground: "#FF8374",
-      headerColor: "white",
-      photoBorderColor: "#FEE24C"
-    }
-  
-
-
-  , 
-    red: {
-      wrapperBackground: "#DE9967",
-      headerBackground: "#870603",
-      headerColor: "white",
-      photoBorderColor: "white"
-    }
-
-  }
-;
-
-function generateHTML(data) {
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -67,7 +26,7 @@ function generateHTML(data) {
          }
          .wrapper {
            
-         background-color: ${colors[data.ghcolor].wrapperBackground};
+         background-color: #E6E1C3;
          padding-top: 100px;
          }
          body {
@@ -109,8 +68,8 @@ function generateHTML(data) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors[data.ghcolor].headerBackground};
-         color:  ${colors[data.ghcolor].headerColor};
+         background-color: #C1C72C;
+         color:  black;
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -121,7 +80,7 @@ function generateHTML(data) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors[data.ghcolor].photoBorderColor};
+         border: 6px solid black;
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -164,8 +123,8 @@ function generateHTML(data) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors[data.ghcolor].headerBackground};
-           color: ${colors[data.ghcolor].headerColor};
+           background-color: #C1C72C;
+           color: black;
            margin: 20px;
          }
          
@@ -193,43 +152,43 @@ function generateHTML(data) {
          <div class="wrapper">
             <div class = "row photo-header">
             <div class= "col col-sm-8">
-              <img src = "${data.profileImg}">
+              <img src = "https://avatars0.githubusercontent.com/u/16998448?v=4">
               <h3>Hi!<h3>
-              <h3>My name is ${data.userName}!</h3>
-              <h5>Currently @ ${data.company}</h5>
+              <h3>My name is Josh!</h3>
+              <h5>Currently @ Joshua Fréchette Design</h5>
               <div class="row">
                 <div class="col">
-                  <a href="https://www.google.com/maps/search/?api= + ${data.location}"><i class="fas fa-location-arrow"></i><p>${data.location}</p></a>
+                  <a href="https://www.google.com/maps/search/?api= + Toronto"><i class="fas fa-location-arrow"></i><p>Toronto</p></a>
                 </div>
                 <div class="col">
-                  <a href=${data.userGitHub}><i class="fab fa-github-alt"></i><p>GitHub</p></a>
+                  <a href=https://api.github.com/users/TwistedPixels><i class="fab fa-github-alt"></i><p>GitHub</p></a>
                 </div>
                 <div class="col">
-                  <a href=${data.blog}><i class="fas fa-rss"></i><p>Blog</p></a>  
+                  <a href=https://twistedpixels.github.io/ProfessionalPortfolio/><i class="fas fa-rss"></i><p>Blog</p></a>  
                 </div>
               </div>
             </div>
           </div>
           <div class="col jumbotron">
-            <h4>${data.bio}</h4>
+            <h4>Graphic Designer studying Full Stack Web Development at the University of Toronto.</h4>
               <div class="row">
                 <div class = "col ol-sm card">
                     <h5 class ="card-title">Public Repositories</h5>
-                    <p class="card-text">${data.repos}</p>
+                    <p class="card-text">13</p>
                 </div>
                 <div class = "col col-sm card">
                     <h5 class ="card-title">Followers</h5>
-                    <p class="card-text">${data.followers}</p>
+                    <p class="card-text">0</p>
                 </div>
               </div>
               <div class="row">                 
                 <div class = "col col-sm card">
                     <h5 class ="card-title">GitHub Stars</h5>
-                    <p class="card-text">${data.stars}</p>             
+                    <p class="card-text">0</p>             
                 </div>
                 <div class = "col col-sm card">
                     <h5 class ="card-title">Following</h5>
-                    <p class="card-text">${data.following}</p>
+                    <p class="card-text">0</p>
                 </div>
               </div>
           </div>
@@ -240,9 +199,4 @@ function generateHTML(data) {
       </div>
       <div style="height: 90vh; width: 100%; background: #F7F7F7; -webkit-print-color-adjust: exact;"></div>
 
-      </body>`
-      
-        }
-
-
-        module.exports = generateHTML
+      </body>

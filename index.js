@@ -48,7 +48,7 @@ async function init() {
                 "repos": response.data.public_repos,
                 "followers": response.data.followers,
                 'stars': 0,//placeholder
-                // "stars": response.data.starred_url,
+                // "stars": response.data.starred[],
                 "following": response.data.following,
                 "ghcolor": userData.color
             }
@@ -59,11 +59,43 @@ async function init() {
             })
             
         })
-        
+        // starCount()
         return ghname
     })
         return x
     }
+
+// const got = require('got')//npm i got
+
+// const stars = (ghname) =>
+// 	got(`https://api.github.com/users/${ghname}/starred`)
+// 	.then((res) => JSON.parse(res.body))
+// 	.then((starred) => starred.map((s) => ({
+// 		  owner:       s.owner.login
+// 		, repo:        s.name
+// 		, description: s.description
+// 		, language:    s.language
+// 		, isFork:      false
+// 		, stargazers:  s.stargazers_count
+// 		, watchers:    s.watchers_count
+// 	})))
+// console.log(stars)
+
+// const starCount = async (stars, ghname) => {
+//     let queryURL = `https://api.github.com/users/${ghname}/starred` ;
+
+//     axios
+//     .get(queryURL).then(async function (res) {
+//         // console.log(userStars)
+        
+//         const stars = {
+//             "userStars": res.data.length
+//         }
+//         console.log(stars)
+
+//     })
+// }
+
     
     const pdfMaker = async (ghname) => {
         
@@ -80,6 +112,9 @@ async function init() {
     await page.setContent(html, {
         waitUntil: "networkidle2"
         });
+
+    await page.emulateMedia("screen");
+    
     await page.screenshot({path: `./pngs/${ghname}.png`});
 
     await page.pdf({
@@ -94,6 +129,7 @@ async function init() {
 
 const program = async () =>{
     const ghname = await init()
+    // await starCount(stars)
     await pdfMaker(ghname)
 }
 

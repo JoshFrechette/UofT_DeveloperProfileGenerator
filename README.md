@@ -12,4 +12,8 @@ https://github.com/TwistedPixels/Developer_Profile_Generator.git
 https://twistedpixels.github.io/Developer_Profile_Generator/
 
 # Usage
+ Web application
 
+# Documentation
+
+[deployment_images](./Documentation/Project_GIFs/Profile_Generator.gif)
